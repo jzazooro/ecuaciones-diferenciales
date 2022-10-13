@@ -11,5 +11,14 @@ f=((x**2)*y(x)-y(x))/(y(x)-1)
 
 sympy.Eq(y(x).diff(x), f)
 
-solucion= sympy.dsolve(y(x).diff(x)-f)
-sympy.pprint(solucion)
+condicion={y(3): -1}
+
+soluciongeneral=sympy.dsolve(y(x).diff(x)-f)
+solucionfinal= sympy.dsolve(y(x).diff(x)-f, ics=condicion)
+
+print("la solucion general de la ecuacion es: ")
+sympy.pprint(soluciongeneral)
+
+print("la solucion con la condicion inicial de la ecuacion es: ")
+sympy.pprint(solucionfinal)
+
