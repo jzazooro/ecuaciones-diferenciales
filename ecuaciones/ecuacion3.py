@@ -4,14 +4,16 @@ import math
 import numpy as np
 import matplotlib as plt
 
-t=sympy.Symbol('t')
-y=sympy.Function('y')
+def ecuaciontres():
 
-f=2*(2-t)**2+(y(t))/(t-2)
+    t=sympy.Symbol('t')
+    y=sympy.Function('y')
 
-sympy.Eq(y(t).diff(t), f)
+    f=2*(2-t)**2+(y(t))/(t-2)
 
-soluciongeneral=sympy.dsolve(y(t).diff(t)-f)
+    sympy.Eq(y(t).diff(t), f)
 
-print("la solucion general de la ecuacion es: ")
-sympy.pprint(soluciongeneral)
+    soluciongeneral=sympy.dsolve(y(t).diff(t)-f)
+
+    print("la solucion general de la ecuacion es: ")
+    sympy.pprint(soluciongeneral)

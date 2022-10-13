@@ -4,14 +4,16 @@ import math
 import numpy as np
 import matplotlib as plt
 
-t=sympy.Symbol('t')
-y=sympy.Function('y')
+def ecuacioncuatro():
 
-f=(3*t)/2+y(t)/2*t
+    t=sympy.Symbol('t')
+    y=sympy.Function('y')
 
-sympy.Eq(y(t).diff(t), f)
+    f=(3*t)/2+y(t)/2*t
 
-solucion=sympy.dsolve(y(t).diff(t)-f)
+    sympy.Eq(y(t).diff(t), f)
 
-print("la solucion general de la ecuacion es: ")
-sympy.pprint(solucion)
+    soluciongeneral=sympy.dsolve(y(t).diff(t)-f)
+    
+    print("la solucion general de la ecuacion es: ")
+    sympy.pprint(soluciongeneral)
