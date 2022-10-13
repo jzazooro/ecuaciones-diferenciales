@@ -11,5 +11,13 @@ f=y(x)*ln(y(x))*asin(x)
 
 sympy.Eq(y(x).diff(x), f)
 
-solucion= sympy.dsolve(y(x).diff(x)-f)
-sympy.pprint(solucion)
+condicion={y((math.pi)/2): math.e}
+
+soluciongeneral= sympy.dsolve(y(x).diff(x)-f)
+solucionfinal= sympy.dsolve(y(x).diff(x)-f, ics=condicion)
+
+print("la solucion general de la ecuacion es: ")
+sympy.pprint(soluciongeneral)
+
+print("la solucion con la condicion inicial de la ecuacion es: ")
+sympy.pprint(solucionfinal)
