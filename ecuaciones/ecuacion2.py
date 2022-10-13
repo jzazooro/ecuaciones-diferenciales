@@ -4,20 +4,22 @@ import math
 import numpy as np
 import matplotlib as plt
 
-x=sympy.Symbol('x')
-y=sympy.Function('y')
+def ecuaciondos():
 
-f=y(x)*ln(y(x))*asin(x)
+    x=sympy.Symbol('x')
+    y=sympy.Function('y')
 
-sympy.Eq(y(x).diff(x), f)
+    f=y(x)*ln(y(x))*asin(x)
 
-condicion={y((math.pi)/2): math.e}
+    sympy.Eq(y(x).diff(x), f)
 
-soluciongeneral= sympy.dsolve(y(x).diff(x)-f)
-solucionfinal= sympy.dsolve(y(x).diff(x)-f, ics=condicion)
+    condicion={y((math.pi)/2): math.e}
 
-print("la solucion general de la ecuacion es: ")
-sympy.pprint(soluciongeneral)
+    soluciongeneral= sympy.dsolve(y(x).diff(x)-f)
+    solucionfinal= sympy.dsolve(y(x).diff(x)-f, ics=condicion)
 
-print("la solucion con la condicion inicial de la ecuacion es: ")
-sympy.pprint(solucionfinal)
+    print("la solucion general de la ecuacion es: ")
+    sympy.pprint(soluciongeneral)
+    
+    print("la solucion con la condicion inicial de la ecuacion es: ")
+    sympy.pprint(solucionfinal)
